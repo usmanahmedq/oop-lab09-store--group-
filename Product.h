@@ -1,6 +1,7 @@
 #ifndef PRODUCT_H
 #define PRODUCT_H
 
+#include <iostream>
 #include <string>
 
 class Product {
@@ -19,6 +20,24 @@ public:
 
     double stockValue() const {
         return price * quantity;
+    }
+
+    bool operator<(const Product& other) const {
+        return price < other.price;
+    }
+
+    bool operator>(const Product& other) const {
+        return price > other.price;
+    }
+
+    bool operator==(const Product& other) const {
+        return name == other.name;
+    }
+
+    friend std::ostream& operator<<(std::ostream& out, const Product& product) {
+        out << product.name << " | Rs. " << product.price
+            << " | qty " << product.quantity;
+        return out;
     }
 };
 
