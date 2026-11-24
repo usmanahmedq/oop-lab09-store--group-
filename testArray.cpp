@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "DynamicArray.h"
 
 int main() {
@@ -20,5 +21,12 @@ int main() {
     std::cout << "First: " << numbers[0] << '\n';
 
     numbers[7];  // Galat index ko jaan-boojh kar test karo
+
+        DynamicArray<std::string> words(1);
+    words.add("template");
+    words.add("works");
+
+    std::cout << words[0] << ' ' << words[1] << '\n';
+    
     return 0;
 }
